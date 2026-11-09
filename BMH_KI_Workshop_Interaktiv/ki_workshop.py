@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Interaktiver BMH-KI-Workshop: lokale Live-Umfrage ohne Cloud und ohne pip."""
 from __future__ import annotations
-import csv, io, json, secrets, socket, sys, threading, webbrowser
+import csv, io, json, os, secrets, socket, sys, threading, webbrowser
 from collections import Counter
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -12,7 +12,7 @@ QUESTIONS = json.loads((BASE / 'fragen.json').read_text(encoding='utf-8'))
 PARTS = {1:'Warm-up: Wie stehen wir zu KI?',2:'Einsatzmöglichkeiten bei BMH',3:'Interaktive Übung: Grün, Gelb oder Rot?'}
 assert len({q['id'] for q in QUESTIONS})==len(QUESTIONS)
 assert all(q['type'] in ('wordcloud','choice','multi','scenario') and q['part'] in PARTS for q in QUESTIONS)
-PORT = int(sys.argv[1]) if len(sys.argv)>1 else 8765
+PORT = int(os.environ.get('PORT', sys.argv[1] if len(sys.argv)>1 else 8765))
 KEY = secrets.token_urlsafe(28)
 SESSION = secrets.token_urlsafe(12)
 LOCK = threading.RLock()
@@ -25,7 +25,10 @@ def find_ip():
     except OSError:
         try: return socket.gethostbyname(socket.gethostname())
         except OSError: return '127.0.0.1'
-JOIN_URL='http://{}:{}/'.format(find_ip(),PORT)
+    JOIN_URL = os.environ.get(
+        'RENDER_EXTERNAL_URL',
+        'http://{}:{}/'.format(find_ip(), PORT)
+    )
 
 def public_question(q, reveal=False):
     return {k:v for k,v in q.items() if k not in ('solution','reason','safer') or reveal}
@@ -152,7 +155,9 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     try: server=ThreadingHTTPServer(('0.0.0.0',PORT),Handler)
     except OSError as e: raise SystemExit('Start fehlgeschlagen, Port {} belegt: {}'.format(PORT,e))
-    admin='http://127.0.0.1:{}/moderation?key={}'.format(PORT,KEY)
+    admin = '{}/moderation?key={}'.format(
+        JOIN_URL.rstrip('/'), KEY
+    )
     print('\n'+'='*68+'\n  BMH · INTERAKTIVER KI-WORKSHOP\n'+'='*68)
     print('  MODERATION / BEAMER: '+admin)
     print('  SMARTPHONES:         '+JOIN_URL)
