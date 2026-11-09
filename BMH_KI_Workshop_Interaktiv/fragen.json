@@ -1,113 +1,144 @@
 [
   {
-    "id": "bild_berge",
+    "id": "bild_1",
     "part": 1,
     "type": "detect",
-    "title": "Bild: Schweizer Berghütte",
-    "subtitle": "KI-generiert oder von einem Menschen?",
+    "title": "Gemälde: Original oder KI?",
+    "subtitle": "Welches Bild hat die KI erstellt?",
     "media": "image",
-    "content": "quiz_berge.jpg",
-    "solution": "KI-generiert",
-    "reason": "Dieses Bergmotiv wurde mit einem Bildgenerator erstellt. Auch überzeugende Landschaftsbilder sind kein Herkunftsnachweis."
+    "content": "frage1.png",
+    "options": [
+      "A",
+      "B"
+    ],
+    "solution": "B",
+    "reason": "Links ist Vincent van Goghs Gemälde „Fischerboote bei Saintes-Maries-de-la-Mer“ (1888). Rechts wurde ein Bild im ähnlichen Stil mit KI erzeugt."
   },
   {
-    "id": "text_1",
+    "id": "bild_2",
     "part": 1,
     "type": "detect",
-    "title": "Eine Nachricht aus dem Hotelalltag",
-    "subtitle": "KI-generiert oder von einem Menschen?",
-    "media": "text",
-    "content": "Vielen Dank für Ihre Nachricht! Wir freuen uns sehr, dass Sie Ihren Aufenthalt bei uns planen. Gerne helfen wir Ihnen bei der Auswahl des passenden Zimmers und stehen für weitere Fragen jederzeit zur Verfügung.",
-    "solution": "KI-generiert",
-    "reason": "Dieser Text wurde für das Quiz mit KI verfasst. Ein flüssiger Stil ist kein sicherer Herkunftshinweis."
-  },
-  {
-    "id": "text_2",
-    "part": 1,
-    "type": "detect",
-    "title": "Ein kurzer literarischer Text",
-    "subtitle": "KI-generiert oder von einem Menschen?",
-    "media": "text",
-    "content": "Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt.",
-    "solution": "Mensch",
-    "reason": "Der Auszug stammt aus Franz Kafkas „Die Verwandlung“ (1915)."
-  },
-  {
-    "id": "text_3",
-    "part": 1,
-    "type": "detect",
-    "title": "Ein Werbetext für den Winter",
-    "subtitle": "KI-generiert oder von einem Menschen?",
-    "media": "text",
-    "content": "Wenn die ersten Sonnenstrahlen die verschneiten Gipfel berühren, beginnt dein Wintermoment. Entdecke klare Bergluft, knirschenden Schnee und kleine Auszeiten mit grosser Wirkung.",
-    "solution": "KI-generiert",
-    "reason": "Dieser Werbetext wurde für das Quiz mit KI formuliert."
-  },
-  {
-    "id": "text_4",
-    "part": 1,
-    "type": "detect",
-    "title": "Ein Gedicht über die Berge",
-    "subtitle": "KI-generiert oder von einem Menschen?",
-    "media": "text",
-    "content": "Über allen Gipfeln\nIst Ruh,\nIn allen Wipfeln\nSpürest du\nKaum einen Hauch;",
-    "solution": "Mensch",
-    "reason": "Aus Johann Wolfgang von Goethes „Wandrers Nachtlied“ (1780)."
-  },
-  {
-    "id": "bild_see",
-    "part": 1,
-    "type": "detect",
-    "title": "Bild: Alpensee",
-    "subtitle": "KI-generiert oder von einem Menschen?",
+    "title": "Essen: Welches Steak ist künstlich?",
+    "subtitle": "Welches Steak kann man nicht wirklich essen?",
     "media": "image",
-    "content": "quiz_see.jpg",
-    "solution": "KI-generiert",
-    "reason": "Dieses Motiv stammt aus einer KI-Bildgenerierung. Es ist keine dokumentarische Aufnahme."
+    "content": "frage2.png",
+    "options": [
+      "A",
+      "B"
+    ],
+    "solution": "A",
+    "reason": "Das Lachsgericht links wurde mit KI erzeugt. Auffällig sind unter anderem die ungewöhnlichen Proportionen der geschnittenen Stücke."
   },
   {
-    "id": "text_5",
+    "id": "bild_3",
     "part": 1,
     "type": "detect",
-    "title": "Eine freundliche Rückmeldung",
-    "subtitle": "KI-generiert oder von einem Menschen?",
-    "media": "text",
-    "content": "Ein gelungener Aufenthalt besteht aus vielen kleinen Momenten: einem herzlichen Empfang, einer guten Empfehlung und dem Gefühl, genau am richtigen Ort zu sein.",
-    "solution": "KI-generiert",
-    "reason": "Dieser Text wurde für das Quiz mit KI formuliert."
+    "title": "Moderatorin: Welches Foto ist echt?",
+    "subtitle": "Auf welchem Bild sieht man die echte Moderatorin?",
+    "media": "image",
+    "content": "frage3.png",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "solution": "A",
+    "reason": "A ist die echte Aufnahme. B, C und D sind KI-generierte Variationen auf Grundlage eines echten Fotos."
   },
   {
-    "id": "text_6",
+    "id": "bild_4",
     "part": 1,
     "type": "detect",
-    "title": "Ein bekannter Romananfang",
-    "subtitle": "KI-generiert oder von einem Menschen?",
-    "media": "text",
-    "content": "In Front des schon seit Kurfürst Georg Wilhelm von der Familie von Briest bewohnten Herrenhauses zu Hohen-Cremmen fiel heller Sonnenschein auf die mittagsstille Dorfstraße.",
-    "solution": "Mensch",
-    "reason": "Aus Theodor Fontanes „Effi Briest“ (1895)."
+    "title": "Katzen: Wer jagt nur digitale Mäuse?",
+    "subtitle": "Welche dieser Katzen ist KI-generiert?",
+    "media": "image",
+    "content": "frage4.png",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "solution": "D",
+    "reason": "Die springende Katze in D ist KI-generiert. Die Pfotenstellung und Perspektive können Hinweise liefern."
   },
   {
-    "id": "text_7",
+    "id": "bild_5",
     "part": 1,
     "type": "detect",
-    "title": "Ein Hinweis an Gäste",
-    "subtitle": "KI-generiert oder von einem Menschen?",
-    "media": "text",
-    "content": "Aufgrund der aktuellen Wetterlage kann es heute zu kurzfristigen Anpassungen im Betrieb kommen. Bitte informieren Sie sich vor Ihrer Anreise über den aktuellen Status der Anlagen. Vielen Dank für Ihr Verständnis.",
-    "solution": "KI-generiert",
-    "reason": "Dieser Text wurde für das Quiz mit KI verfasst."
+    "title": "Baby: Welches Foto ist künstlich?",
+    "subtitle": "Welches Baby-Foto hat die KI erstellt?",
+    "media": "image",
+    "content": "frage5.png",
+    "options": [
+      "A",
+      "B"
+    ],
+    "solution": "B",
+    "reason": "Das Baby mit Mütze (B) ist KI-generiert. Besonders Haut und Augen wirken ungewöhnlich glatt."
   },
   {
-    "id": "text_8",
+    "id": "bild_6",
     "part": 1,
     "type": "detect",
-    "title": "Ein Satz aus einem Theaterstück",
-    "subtitle": "KI-generiert oder von einem Menschen?",
-    "media": "text",
-    "content": "Wir wollen sein ein einzig Volk von Brüdern,\nIn keiner Not uns trennen und Gefahr.",
-    "solution": "Mensch",
-    "reason": "Aus Friedrich Schillers „Wilhelm Tell“ (1804)."
+    "title": "Tiger: Original oder KI?",
+    "subtitle": "Welches Tiger-Bild wurde mit KI erstellt?",
+    "media": "image",
+    "content": "frage6.png",
+    "options": [
+      "A",
+      "B"
+    ],
+    "solution": "A",
+    "reason": "A ist KI-generiert. Gerade bei Tierporträts ohne viel Hintergrund sind künstliche Bilder schwer zu erkennen."
+  },
+  {
+    "id": "bild_7",
+    "part": 1,
+    "type": "detect",
+    "title": "Katzenbrille: Welches Bild ist KI?",
+    "subtitle": "Welches Bild stammt von der KI?",
+    "media": "image",
+    "content": "frage7.png",
+    "options": [
+      "A",
+      "B"
+    ],
+    "solution": "B",
+    "reason": "Die Katze mit der schwarzen Brille (B) wurde mit KI erstellt. Das echte Foto links zeigt unter anderem natürlich verschmutzte Brillengläser."
+  },
+  {
+    "id": "bild_8",
+    "part": 1,
+    "type": "detect",
+    "title": "Skifahren: Welche Skier sind digital?",
+    "subtitle": "Welche Skier sind rein digital?",
+    "media": "image",
+    "content": "frage8.png",
+    "options": [
+      "A",
+      "B"
+    ],
+    "solution": "B",
+    "reason": "B ist KI-generiert. Ein Hinweis ist die unplausible Ausrichtung der Skibindung."
+  },
+  {
+    "id": "bild_9",
+    "part": 1,
+    "type": "detect",
+    "title": "Urlaub: Welches Foto ist KI?",
+    "subtitle": "Welches Urlaubsfoto kommt von der KI?",
+    "media": "image",
+    "content": "frage9.png",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "solution": "B",
+    "reason": "B wurde mit einem KI-Bildgenerator erstellt. Die realistische Tiefenunschärfe macht die Erkennung besonders schwierig."
   },
   {
     "id": "warm_word",
