@@ -40,7 +40,7 @@ def stats(q):
     if q['type']=='multi':
         count=Counter(v for row in votes for v in row)
         return {'total':len(votes),'rows':[{'label':o,'count':count[o]} for o in q['options']]}
-    opts=['Grün','Gelb','Rot'] if q['type']=='scenario' else ['KI-generiert','Mensch'] if q['type']=='detect' else q['options']
+    opts=['Grün','Gelb','Rot'] if q['type']=='scenario' else q.get('options',['KI-generiert','Mensch']) if q['type']=='detect' else q['options']
     count=Counter(votes)
     result={'total':len(votes),'rows':[{'label':o,'count':count[o]} for o in opts]}
     if q['type'] in ('scenario','detect'): result['correct']=count[q['solution']]
@@ -107,9 +107,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(raw=b.getvalue(),mime='image/svg+xml')
             except Exception as e: return self.error(500,'QR-Code konnte nicht erstellt werden: '+str(e))
         files={'/':'participant.html','/moderation':'presenter.html','/assets/style.css':'style.css','/assets/participant.js':'participant.js','/assets/presenter.js':'presenter.js'}
-        if path.startswith('/assets/quiz_') and path.endswith('.jpg'):
+        if path.startswith('/assets/') and Path(path).name.startswith(('quiz_','frage')) and path.lower().endswith(('.jpg','.jpeg','.png')):
             f=BASE/path.lstrip('/')
-            if f.is_file():return self.respond(raw=f.read_bytes(),mime='image/jpeg')
+            if f.is_file():return self.respond(raw=f.read_bytes(),mime='image/png' if f.suffix.lower()=='.png' else 'image/jpeg')
         if path in files:
             f=BASE/'assets'/files[path]
             mime={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.css':'text/css; charset=utf-8'}[f.suffix]
@@ -146,7 +146,7 @@ class Handler(BaseHTTPRequestHandler):
                 elif t=='multi':
                     if not isinstance(v,list) or not 1<=len(v)<=q['max_select'] or len(set(v))!=len(v) or any(x not in q['options'] for x in v):return self.error(400,'Bitte zulässige Antworten wählen')
                 elif t=='detect':
-                    if v not in ('KI-generiert','Mensch'):return self.error(400,'Bitte eine Antwort wählen')
+                    if v not in q.get('options',['KI-generiert','Mensch']):return self.error(400,'Bitte eine Antwort wählen')
                 elif t=='scenario':
                     if v not in ('Grün','Gelb','Rot'):return self.error(400,'Bitte Grün, Gelb oder Rot wählen')
                 elif not isinstance(v,str) or v not in q['options']:return self.error(400,'Bitte eine Antwort wählen')
