@@ -13,7 +13,7 @@ PARTS = {1:'Warm-up: Wie stehen wir zu KI?',2:'Einsatzmöglichkeiten bei BMH',3:
 assert len({q['id'] for q in QUESTIONS})==len(QUESTIONS)
 assert all(q['type'] in ('wordcloud','choice','multi','scenario') and q['part'] in PARTS for q in QUESTIONS)
 PORT = int(os.environ.get('PORT', sys.argv[1] if len(sys.argv)>1 else 8765))
-KEY = secrets.token_urlsafe(28)
+KEY = os.environ.get('ADMIN_KEY') or secrets.token_urlsafe(28)
 SESSION = secrets.token_urlsafe(12)
 LOCK = threading.RLock()
 STATE = {'index':0,'open':True,'reveal':False,'generation':0,'votes':{q['id']:{} for q in QUESTIONS}}
