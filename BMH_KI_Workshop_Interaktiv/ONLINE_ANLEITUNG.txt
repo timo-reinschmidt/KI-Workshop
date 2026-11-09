@@ -1,0 +1,12 @@
+BMH KI-Workshop – kostenlose Online-Version auf Render
+
+1. ZIP entpacken und Inhalt des Ordners BMH_KI_Workshop_Interaktiv in ein PRIVATES GitHub-Repository hochladen.
+2. Bei https://dashboard.render.com anmelden. New > Blueprint > GitHub-Repository auswählen (render.yaml wird erkannt). Alternativ New > Web Service, Runtime Python, Build: echo OK, Start: python ki_workshop.py, Plan Free.
+3. Nach erfolgreichem Deploy die öffentliche https://...onrender.com Adresse öffnen.
+4. Moderation: https://...onrender.com/moderation?key=DEIN_ADMIN_KEY (ADMIN_KEY in Render > Environment nachsehen). Den Schlüssel niemals an Teilnehmende weitergeben.
+5. QR-Code in der Moderationsansicht führt zu der öffentlichen HTTPS-Adresse.
+6. Mit 2-3 Mobiltelefonen über Mobilfunk testen; alle 3 Teile testen.
+7. Unmittelbar nach dem Workshop CSV exportieren. Die Gratisinstanz kann nach 15 Min Inaktivität schlafen und bei Neustart sämtliche Antworten verlieren. Auch ein Neustart während der Sitzung kann Antworten löschen. Kein geeignetes System für vertrauliche Daten.
+8. Mindestens 5 Minuten vor Beginn öffnen und aktiv halten. Backup: Fragen als Folien oder alternative Abstimmung bereithalten.
+
+WICHTIG: Cloud-Version ist ein Pilot ohne dauerhafte Datenspeicherung. 11 Teilnehmende sollten technisch möglich sein, jedoch nicht garantiert. Freie Anbieter können Limits ändern.
