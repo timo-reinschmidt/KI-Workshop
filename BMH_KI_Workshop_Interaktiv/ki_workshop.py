@@ -28,7 +28,7 @@ def find_ip():
 JOIN_URL = os.environ.get(
     'PUBLIC_URL',
     'http://{}:{}/'.format(find_ip(), PORT)
-)
+).rstrip('/') + '/'
 
 def public_question(q, reveal=False):
     return {k:v for k,v in q.items() if k not in ('solution','reason','safer') or reveal}
