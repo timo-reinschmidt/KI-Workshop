@@ -25,10 +25,10 @@ def find_ip():
     except OSError:
         try: return socket.gethostbyname(socket.gethostname())
         except OSError: return '127.0.0.1'
-    JOIN_URL = os.environ.get(
-        'RENDER_EXTERNAL_URL',
-        'http://{}:{}/'.format(find_ip(), PORT)
-    )
+JOIN_URL = os.environ.get(
+    'PUBLIC_URL',
+    'http://{}:{}/'.format(find_ip(), PORT)
+)
 
 def public_question(q, reveal=False):
     return {k:v for k,v in q.items() if k not in ('solution','reason','safer') or reveal}
