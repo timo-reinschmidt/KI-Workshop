@@ -1,0 +1,58 @@
+BMH KI-PILOTWORKSHOP – INTERAKTIVE ABSTIMMUNG (Mac & Windows)
+============================================================
+
+INHALT
+Teil 1: Warm-up (5 Fragen, inklusive Wortwolke)
+Teil 2: Einsatzmöglichkeiten bei BMH (3 Fragen, inkl. Mehrfachauswahl)
+Teil 3: Interaktive Übung (7 Praxisfälle: Grün / Gelb / Rot)
+Nach jeder Frage: Live-Balkendiagramm/Wortwolke; zum Abschluss Gesamtauswertung
+Alle Ergebnisse als Excel-freundliche CSV exportierbar.
+
+START
+1. ZIP-Datei entpacken (nicht direkt aus ZIP heraus öffnen).
+2. Python 3 installieren, sofern nicht vorhanden: python.org/downloads/
+   Sonstige Python-Pakete sind NICHT nötig.
+3. Windows: Doppelklick auf start_windows.bat
+   Mac: Rechtsklick auf start_mac.command -> Öffnen (ggf. im Terminal: bash start_mac.command)
+4. Es öffnet sich die MODERATIONSSEITE in deinem Browser.
+   Falls sie nicht öffnet: den kompletten Moderationslink aus dem Terminal kopieren.
+5. Beamer: Moderationsseite anzeigen, QR-Code auf der linken Seite scannen lassen.
+6. Teilnehmende benötigen nur einen Browser auf dem Handy, keine Installation.
+7. Rechts/unterhalb der Diagramme: Frage wechseln, Abstimmung schliessen,
+   Ergebnisse anzeigen, bei den Praxisfällen die Lösung aufdecken.
+8. Am Schluss auf „Gesamtauswertung“ klicken und „CSV exportieren“ wählen.
+9. Zum Beenden im Terminal Strg+C / Ctrl+C.
+
+WICHTIGE NETZWERK-HINWEISE
+- Laptop und Smartphones müssen in einem Netzwerk sein, in dem Geräte sich gegenseitig erreichen.
+- Gast-WLANs mit Client-Isolation funktionieren oft NICHT; bei Problemen IT fragen.
+- Windows-Firewall kann beim ersten Start eine Ausnahme für das lokale/private Netz verlangen.
+- Der Teilnahmelink zeigt die lokale IP deines Rechners: http://<IP>:8765/
+- Falls schon ein Server auf Port 8765 läuft: "python ki_workshop.py 8766" starten.
+- Mac/Windows können beide den Workshop hosten, aber es läuft jeweils nur EIN Host.
+- Keine Cloud: Für ein öffentlich erreichbares Voting über beliebige Mobilfunknetze
+  wäre ein gehostetes Tool wie Mentimeter nötig.
+
+DATENSCHUTZ
+- Keine Namen oder vertraulichen Informationen eingeben.
+- Alle Stimmen bleiben im Arbeitsspeicher des Host-Computers und gehen beim Beenden verloren.
+- Pro Browserkennung und Frage eine Stimme, die vor dem Schliessen änderbar ist.
+- Die Teilnehmenden stimmen anonym ab. Es gibt keinen Login und keine Teilnehmerliste.
+- CSV ist eine aggregierte Auswertung ohne individuelle Zuordnung.
+- Moderatorlink enthält einen geheimen Schlüssel; nicht an Teilnehmende verteilen.
+
+FRAGEN ANPASSEN
+- Die Fragen sind in fragen.json gespeichert. Vor dem Workshop bearbeiten.
+- Bei „scenario“: solution = Grün, Gelb oder Rot, reason = Erklärung,
+  safer = sicherere Formulierung. Die Lösung wird erst beim Aufdecken übertragen.
+- Während eines laufenden Workshops die Datei nicht ändern, danach neu starten.
+
+EMPFOHLENE ABFOLGE
+Teil 1  5–8 Minuten
+Teil 2  5–8 Minuten
+Teil 3  15–20 Minuten
+Abschluss 5 Minuten Diskussion / Feedback
+
+TEST VOR DEM WORKSHOP
+- Host starten, QR-Code selbst mit dem Handy scannen, eine Testantwort senden,
+  am Beamer Live-Ergebnis anzeigen. Anschliessend „Neu starten“ zum Löschen.
