@@ -3,10 +3,11 @@ services:
     name: bmh-ki-workshop
     runtime: python
     plan: free
-    buildCommand: "echo 'Keine Installation erforderlich'"
-    startCommand: "python ki_workshop.py"
+    rootDir: BMH_KI_Workshop_Interaktiv
+    buildCommand: echo "Keine Installation erforderlich"
+    startCommand: python ki_workshop.py
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.11
       - key: PORT
-        value: 10000
+        value: "10000"
